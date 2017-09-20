@@ -396,6 +396,13 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="M:jijia.zexam.web.Controllers.Api.AccountController.Login(jijia.zexam.domain.VO.VLoginModel)">
+            <summary>
+            登录
+            </summary>
+            <param name="l"></param>
+            <returns></returns>
+        </member>
         <member name="T:jijia.zexam.web.Controllers.Api.CharpterController">
             <summary>
             章节
@@ -600,18 +607,18 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:jijia.zexam.web.Controllers.Api.OutUserController.Insert(jijia.zexam.domain.VO.OutUser)">
+        <member name="M:jijia.zexam.web.Controllers.Api.OutUserController.Insert(jijia.zexam.domain.VO.VOutUser)">
             <summary>
             新增
             </summary>
-            <param name="inUser"></param>
+            <param name="outUser"></param>
             <returns></returns>
         </member>
-        <member name="M:jijia.zexam.web.Controllers.Api.OutUserController.Update(jijia.zexam.domain.VO.OutUser)">
+        <member name="M:jijia.zexam.web.Controllers.Api.OutUserController.Update(jijia.zexam.domain.VO.VOutUser)">
             <summary>
             保存
             </summary>
-            <param name="inUser"></param>
+            <param name="outUser"></param>
             <returns></returns>
         </member>
         <member name="M:jijia.zexam.web.Controllers.Api.OutUserController.Import(System.Web.HttpPostedFile)">
@@ -621,7 +628,7 @@
             <param name="file"></param>
             <returns></returns>
         </member>
-        <member name="M:jijia.zexam.web.Controllers.Api.OutUserController.Delete(System.Nullable{System.Int32})">
+        <member name="M:jijia.zexam.web.Controllers.Api.OutUserController.Delete(System.Int32)">
             <summary>
             删除
             </summary>
@@ -633,7 +640,7 @@
             校内用户
             </summary>
         </member>
-        <member name="M:jijia.zexam.web.Controllers.Api.InUserController.Get(System.String,System.String,System.Int32)">
+        <member name="M:jijia.zexam.web.Controllers.Api.InUserController.Get(System.String,System.String,System.Int32,System.Int32,System.Int32)">
             <summary>
             分页列表
             </summary>
@@ -649,14 +656,14 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:jijia.zexam.web.Controllers.Api.InUserController.Insert(jijia.zexam.domain.VO.InUser)">
+        <member name="M:jijia.zexam.web.Controllers.Api.InUserController.Insert(jijia.zexam.domain.VO.VInUser)">
             <summary>
             添加
             </summary>
             <param name="inUser"></param>
             <returns></returns>
         </member>
-        <member name="M:jijia.zexam.web.Controllers.Api.InUserController.Update(jijia.zexam.domain.VO.InUser)">
+        <member name="M:jijia.zexam.web.Controllers.Api.InUserController.Update(jijia.zexam.domain.VO.VInUser)">
             <summary>
             更新
             </summary>
@@ -670,14 +677,14 @@
             <param name="file"></param>
             <returns></returns>
         </member>
-        <member name="M:jijia.zexam.web.Controllers.Api.InUserController.Delete(System.Nullable{System.Int32})">
+        <member name="M:jijia.zexam.web.Controllers.Api.InUserController.Delete(System.Int32)">
             <summary>
             删除
             </summary>
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:jijia.zexam.web.Controllers.Api.TestPaperController.CreateTestPager(jijia.zexam.web.Controllers.Api.QuestionCategary[])">
+        <member name="M:jijia.zexam.web.Controllers.Api.TestPaperController.CreateTestPager(jijia.zexam.domain.VO.VTestPagerQusCategary[])">
             <summary>
             根据答题类型自动出卷
             </summary>
@@ -700,7 +707,7 @@
             <param name="pageidx"></param>
             <returns></returns>
         </member>
-        <member name="M:jijia.zexam.web.Controllers.Api.TestPaperController.Update(jijia.zexam.web.Controllers.Api.TestPager)">
+        <member name="M:jijia.zexam.web.Controllers.Api.TestPaperController.Update(jijia.zexam.domain.VO.VTestPaper)">
             <summary>
             更新
             </summary>

@@ -12,6 +12,7 @@ namespace jijia.zexam.web.Controllers.Api
 {
     public class TestPaperQusController : BaseApiController
     {
+        
         /// <summary>
         /// 保存试卷所有细节
         /// </summary>
@@ -20,7 +21,7 @@ namespace jijia.zexam.web.Controllers.Api
         [HttpPost]
         [Route("api/testpaperqus/saveall")]
         public HttpResponseMessage Save(OverYearQus qus) {
-            //BaseRespository<Q_CharpterQuestion>
+            
 
             return Json("{\"s\":true,\"d\":1,\"m\":\"\"}");
         }

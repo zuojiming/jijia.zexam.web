@@ -1,4 +1,5 @@
-﻿using System;
+﻿using jijia.zexam.web.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -13,7 +14,7 @@ namespace jijia.zexam.web
 
             // Web API 路由
             config.MapHttpAttributeRoutes();
-
+            config.Filters.Add(new WebApiOptionRequestFilter());
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

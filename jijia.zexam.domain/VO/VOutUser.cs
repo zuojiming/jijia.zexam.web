@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace jijia.zexam.domain.VO
 {
-    public struct InUser
+    public class VOutUser
     {
         public int id { get; set; }
         public string username { get; set; }

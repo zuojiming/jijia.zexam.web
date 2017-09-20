@@ -1,4 +1,6 @@
-﻿using System;
+﻿using jijia.zexam.domain.Tools;
+using jijia.zexam.web.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +15,8 @@ namespace jijia.zexam.web
     {
         protected void Application_Start()
         {
+            AutoMapperIniter.Init();
+
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

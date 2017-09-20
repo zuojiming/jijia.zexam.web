@@ -34,5 +34,7 @@ namespace jijia.zexam.domain.models
         public int? CreateUser { get; set; }
 
         public int? UpdateUser { get; set; }
+        [NotMapped]
+        public T_QusAnwserGroup group { get; set; }
     }
 }

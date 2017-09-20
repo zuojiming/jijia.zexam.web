@@ -1,4 +1,5 @@
-﻿using jijia.zexam.web.App_Start;
+﻿using jijia.zexam.domain.VO;
+using jijia.zexam.web.App_Start;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace jijia.zexam.web.Controllers.Api
         /// <param name="questionCategary"></param>
         /// <returns></returns>
         [HttpPut]
-        public HttpResponseMessage CreateTestPager([FromBody]QuestionCategary[] questionCategary) {
+        public HttpResponseMessage CreateTestPager([FromBody]VTestPagerQusCategary[] questionCategary) {
             return Json("{\"id\":\"1/*试卷id*/\"}");
         }
         /// <summary>
@@ -43,7 +44,7 @@ namespace jijia.zexam.web.Controllers.Api
         /// <param name="m"></param>
         /// <returns></returns>
         [HttpPost]
-        public HttpResponseMessage Update(TestPager m) {
+        public HttpResponseMessage Update(VTestPaper m) {
             return Json("{\"s\":true,\"d\":1,\"m\":\"\"}");
         }/// <summary>
         /// 删除
@@ -54,19 +55,5 @@ namespace jijia.zexam.web.Controllers.Api
         public HttpResponseMessage Delete(int id) {
             return Json("{\"s\":true,\"d\":1,\"m\":\"\"}");
         }
-    }
-
-    public struct QuestionCategary {
-        public int type { get; set; }
-        public int count { get; set; }
-        public int itemscore { get; set; }
-    }
-
-    public class TestPager {
-        public string name { get; set; }
-        public string title { get; set; }
-        public int totalscore { get; set; }
-        public string desc { get; set; }
-        public int id{ get; set; }
     }
 }

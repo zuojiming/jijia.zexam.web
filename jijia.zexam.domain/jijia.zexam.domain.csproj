@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -54,6 +57,15 @@
   <ItemGroup>
     <Compile Include="Aggregate\User.cs" />
     <Compile Include="DTO\VUser.cs" />
+    <Compile Include="Migrations\201709191431453_InitialCreate.cs" />
+    <Compile Include="Migrations\201709191431453_InitialCreate.Designer.cs">
+      <DependentUpon>201709191431453_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709191718555_zexam.cs" />
+    <Compile Include="Migrations\201709191718555_zexam.Designer.cs">
+      <DependentUpon>201709191718555_zexam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\C_TestQuestionStatis.cs" />
     <Compile Include="Models\C_TestScore.cs" />
     <Compile Include="Models\C_TestStatis.cs" />
@@ -80,9 +92,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\BaseRespository.cs" />
     <Compile Include="Repository\IRepository.cs" />
-    <Compile Include="VO\InUser.cs" />
-    <Compile Include="VO\LoginModel.cs" />
-    <Compile Include="VO\OutUser.cs" />
+    <Compile Include="Tools\AutoMapperIniter.cs" />
+    <Compile Include="Tools\SimpleMapper.cs" />
+    <Compile Include="VO\VInUser.cs" />
+    <Compile Include="VO\VLoginModel.cs" />
+    <Compile Include="VO\VOutUser.cs" />
+    <Compile Include="VO\VTestPagerQus.cs" />
+    <Compile Include="VO\VTestPagerQusAnwser.cs" />
+    <Compile Include="VO\VTestPagerQusCategary.cs" />
+    <Compile Include="VO\VTestPaper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -90,6 +108,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Service\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201709191431453_InitialCreate.resx">
+      <DependentUpon>201709191431453_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709191718555_zexam.resx">
+      <DependentUpon>201709191718555_zexam.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

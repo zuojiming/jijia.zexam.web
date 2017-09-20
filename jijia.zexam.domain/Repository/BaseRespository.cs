@@ -52,7 +52,8 @@ namespace jijia.zexam.domain.Repository
 
         public T Get(int id)
         {
-            return db.Set<T>().Find(id);
+            var o = db.Set<T>().Find(id);
+            return o;
         }
 
         public IEnumerable<T> GetList(Func<T, bool> func)
@@ -64,6 +65,14 @@ namespace jijia.zexam.domain.Repository
         public IEnumerable<T> GetPage(Func<T, bool> func, int pageIdx, int pageSize)
         {
             return db.Set<T>().Where(func).Skip((pageIdx - 1) * pageSize);
+        }
+
+        public IEnumerable<T> GetPage(Func<T, bool> func, int pageIdx, int pageSize,out int pagecount)
+        {
+            var sqldb = db.Set<T>().Where(func);
+            int c = sqldb.Count();
+            pagecount = c / pageSize + (c % pageSize > 0 ? 1 : 0);
+            return sqldb.Skip((pageIdx - 1) * pageSize);
         }
 
         public int InsertList(IEnumerable<T> models)

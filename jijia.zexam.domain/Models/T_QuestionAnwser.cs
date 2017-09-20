@@ -15,7 +15,6 @@ namespace jijia.zexam.domain.models
 
         [StringLength(1)]
         public string Anwser { get; set; }
-
         public int? GroupId { get; set; }
 
         public double? Score { get; set; }
@@ -31,5 +30,7 @@ namespace jijia.zexam.domain.models
         public int? CreateUser { get; set; }
 
         public int? UpdateUser { get; set; }
+        [ForeignKey(nameof(GroupId))]
+        public virtual T_QusAnwserGroup Group { get; set; }
     }
 }

@@ -32,8 +32,11 @@ namespace jijia.zexam.web.App_Start
                 return HttpContext.Current.Response;
             }
         }
-
-        public HttpResponse Request
+        [HttpOptions]
+        public IHttpActionResult OpeartorOptions() {
+            return Ok();
+        }
+        public HttpRequest Request
         {
             get
             {

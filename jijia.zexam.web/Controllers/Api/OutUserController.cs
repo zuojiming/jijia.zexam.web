@@ -1,4 +1,5 @@
-﻿using jijia.zexam.domain.VO;
+﻿using jijia.zexam.application.Apps;
+using jijia.zexam.domain.VO;
 using jijia.zexam.web.App_Start;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace jijia.zexam.web.Controllers.Api
     /// </summary>
     public class OutUserController : BaseApiController
     {
+        OutUserApp outUserApp { get; set; } = new OutUserApp();
         /// <summary>
         /// 读取列表
         /// </summary>
@@ -24,7 +26,8 @@ namespace jijia.zexam.web.Controllers.Api
         /// <returns></returns>
         [HttpGet]
         public HttpResponseMessage Get(string username,string studydate,int classid,int pagesize = 10, int pageidx = 1) {
-            return Json("{\"s\":true,\"d\":{\"pagecount\":100,\"data\":[{\"classid\":\"1\",\"phone\":\"11012011912\",\"sex\":\"1\",\"id\":\"1\",\"studydate\":\"2017/7/7\",\"class\":\"护士1班\",\"realname\":\"左琦\",\"username\":\"admin\"}],\"pageidx\":1,\"pagesize\":10},\"m\":\"\"}");
+            return Json(outUserApp.GetList(username,studydate,classid,pagesize,pageidx));
+            //return Json("{\"s\":true,\"d\":{\"pagecount\":100,\"data\":[{\"classid\":\"1\",\"phone\":\"11012011912\",\"sex\":\"1\",\"id\":\"1\",\"studydate\":\"2017/7/7\",\"class\":\"护士1班\",\"realname\":\"左琦\",\"username\":\"admin\"}],\"pageidx\":1,\"pagesize\":10},\"m\":\"\"}");
         }
         /// <summary>
         /// 读取
@@ -33,29 +36,32 @@ namespace jijia.zexam.web.Controllers.Api
         /// <returns></returns>
         [HttpGet]
         public HttpResponseMessage Get(int id) {
-            return Json("{\"s\":true,\"d\":{\"classid\":\"1\",\"phone\":\"11012011912\",\"sex\":\"1\",\"id\":\"1\",\"studydate\":\"2017/7/7\",\"class\":\"护士1班\",\"username\":\"admin\",\"realname\":\"左琦\"},\"m\":\"\"}");
+            return Json(outUserApp.Get(id));
+            //return Json("{\"s\":true,\"d\":{\"classid\":\"1\",\"phone\":\"11012011912\",\"sex\":\"1\",\"id\":\"1\",\"studydate\":\"2017/7/7\",\"class\":\"护士1班\",\"username\":\"admin\",\"realname\":\"左琦\"},\"m\":\"\"}");
         }
         /// <summary>
         /// 新增
         /// </summary>
-        /// <param name="inUser"></param>
+        /// <param name="outUser"></param>
         /// <returns></returns>
         [HttpPut]
-        public HttpResponseMessage Insert([FromBody]OutUser inUser) {
-            return Json("{\"s\":true,\"d\":1,\"m\":\"数据添加成功\"}");
+        public HttpResponseMessage Insert([FromBody]VOutUser outUser) {
+            return Json(outUserApp.Insert(outUser));
+            //return Json("{\"s\":true,\"d\":1,\"m\":\"数据添加成功\"}");
         }
         /// <summary>
         /// 保存
         /// </summary>
-        /// <param name="inUser"></param>
+        /// <param name="outUser"></param>
         /// <returns></returns>
         [HttpPost]
-        public HttpResponseMessage Update([FromBody]OutUser inUser)
+        public HttpResponseMessage Update([FromBody]VOutUser outUser)
         {
-            if (string.IsNullOrWhiteSpace(inUser.username))
+            if (Request.Files.Count > 0)
             {
                 return Import(null);
             }
+
             return Json("{\"s\":true,\"d\":1,\"m\":\"数据修改成功\"}");
         }
         /// <summary>
@@ -74,9 +80,10 @@ namespace jijia.zexam.web.Controllers.Api
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete]
-        public HttpResponseMessage Delete([FromBody]int? id)
+        public HttpResponseMessage Delete(int id)
         {
-            return Json("{\"s\":true,\"d\":1,\"m\":\"\"}");
+            return Json(outUserApp.Delete(id));
+            //return Json("{\"s\":true,\"d\":1,\"m\":\"\"}");
         }
     }
 }

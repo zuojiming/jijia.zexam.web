@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 
 namespace jijia.zexam.domain.VO
 {
-    public class OutUser
+    public struct VInUser
     {
         public int id { get; set; }
         public string username { get; set; }
+        public string realname { get; set; }
         public string pwd { get; set; }
         public int sex { get; set; }
         public string studydate { get; set; }
         public int classid { get; set; }
+        public string @class { get; set; }
         public string phone { get; set; }
         public int isenabled { get; set; }
     }

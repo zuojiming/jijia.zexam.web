@@ -31,9 +31,8 @@ namespace jijia.zexam.domain.models
         public DateTime? LoginBeginDate { get; set; }
 
         public DateTime? LoginEndDate { get; set; }
-
-        [StringLength(50)]
-        public string ClassId { get; set; }
+        
+        public int ClassId { get; set; }
 
         public DateTime? UpdateDate { get; set; }
 
@@ -46,5 +45,7 @@ namespace jijia.zexam.domain.models
         public int? UpdateUser { get; set; }
 
         public int? IsDelete { get; set; }
+        [ForeignKey("ClassId")]
+        public virtual S_Classes s_Classes { get; set; }
     }
 }

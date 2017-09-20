@@ -16,6 +16,7 @@ namespace jijia.zexam.domain.models
 
         [StringLength(200)]
         public string Title { get; set; }
+        public string Name { get; set; }
 
         [StringLength(200)]
         public string Desc { get; set; }
@@ -29,5 +30,6 @@ namespace jijia.zexam.domain.models
         public int? CreateUser { get; set; }
 
         public int? UpdateUser { get; set; }
+        public virtual List<T_QusAnwserGroup> Groups { get; set; }
     }
 }

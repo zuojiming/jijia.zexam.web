@@ -21,7 +21,7 @@ namespace jijia.zexam.web.Controllers.Api
         /// <param name="l"></param>
         /// <returns></returns>
         [HttpPost]
-        public HttpResponseMessage Login([FromBody]LoginModel l)
+        public HttpResponseMessage Login([FromBody]VLoginModel l)
         {
             var m = new UserApp().Login(l.username,l.pwd,l.categary);
             if (m.s)
@@ -32,7 +32,8 @@ namespace jijia.zexam.web.Controllers.Api
             }
             return  Json(m);
         }
-
+        [HttpGet]
+        [Route("Account/LogOut/")]
         public HttpResponseMessage LogOut() {
             Request.Cookies.Clear();
             return Json(new ReturnModel() { m = "已经退出登录" , s = true }); 

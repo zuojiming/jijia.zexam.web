@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace jijia.zexam.domain.VO
 {
-    public class LoginModel
+    public class VLoginModel
     {
         public string username { get; set; }
         public string pwd { get; set; }

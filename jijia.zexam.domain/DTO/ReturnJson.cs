@@ -11,7 +11,7 @@ namespace jijia.zexam.domain.DTO
     public class ReturnModel
     {
         public string m { get; set; } = string.Empty;
-        public bool s { get; set; } = false;
+        public bool s { get; set; } = true;
         public object d { get; set; } = null;
     }
 }
